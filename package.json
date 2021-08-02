@@ -16,7 +16,8 @@
     "router-dom": "^2.2.3",
     "react-bootstrap": "^1.6.1",
     "reactstrap": "^8.9.0",
-    "react-fontawesome": "^1.7.1"
+    "react-fontawesome": "^1.7.1",
+    "axios": "^0.21.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,6 +50,7 @@
     "@types/react-redux": "^7.1.16",
     "@types/react-bootstrap": "^0.32.26",
     "@types/reactstrap": "^8.7.2",
-    "@types/react-fontawesome": "^8.7.2"
+    "@types/react-fontawesome": "^8.7.2",
+    "@types/axios": "^0.14.0"
   }
 }

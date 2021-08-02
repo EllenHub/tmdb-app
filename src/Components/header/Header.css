@@ -7,7 +7,6 @@
     top: 0;
     left: 0;
     background-color:  #0d253f ;
-
     height: 64px;
     width: 100%;
     z-index: 10;
@@ -18,10 +17,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height:100%
 }
 .header_left {
     width: 700px;
     display: flex;
+
+}
+.logo {
+    width: 170px;
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 100%;
+    display: flex;
+    align-items: center;
 
 }
 .header_nav {
@@ -29,10 +40,14 @@
     display: flex;
     justify-content: space-between;
 }
-.header_nav li {
+
+.header_nav__item {
     display: inline;
     list-style: none;
     cursor: pointer;
+    position: relative;
+    padding: 10px 0;
+
 }
 
 .header_nav li a {
@@ -46,7 +61,6 @@
     color: white;
 }
 
-
 .header_right {
     width: 700px;
     display: flex;
@@ -54,40 +68,67 @@
 }
 
 i {
-    font-size: 20px;
-  color: white;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
 }
 
-.animation_container {
-    display: flex;
+.animation_container_nav {
+    display: none;
     flex-direction: column;
+    padding: 0;
     width: 170px;
-    height: 130px;
-    overflow: hidden;
-    z-index: 1500;
-    top: 46px;
-    left: 308px;
+    height: 129px;
     box-sizing: content-box;
+
     position: absolute;
+    top: 44px;
+    left: 0;
+    z-index: 1500;
+
+
     border-radius: 3px;
     border: 1px solid #cbcaca;
     background-color: white;
 }
-
-
-.animation_container_nav {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-
+.small {
+    height: 40px;
 }
-.animation_container li {
-    padding-top: 6px;
+
+.header_nav__item:hover .animation_container_nav {
+    display: block;
 }
-.animation_container li a {
+
+.animation_container_nav li {
+    list-style: none;
+    padding-top: 7px;
+}
+.animation_container_nav li:hover {
+    background-color: #cccccc;
+}
+.animation_container_nav li a {
     color: black;
     font-size: 16px;
 }
-.animation_container li a:hover {
+.animation_container_nav li a:hover {
     color: black;
 }
+
+.searchInput {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px;
+    bottom: -50px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.searchInput input {
+    width: 100%;
+    border-color: #cbcaca;
+    border-right-style: hidden;
+    border-left-style: hidden;
+}
+
