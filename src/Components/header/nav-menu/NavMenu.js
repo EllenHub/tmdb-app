@@ -1,11 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
-
-import MoviesPopular from "../movies/movies-popular/MoviesPopular";
+import {Link } from "react-router-dom";
 
 export default function NavMenu() {
     return (
-        <Router>
+
             <ul className="header_nav">
                 <li className={'header_nav__item'}><Link to={'/'}>Movies</Link>
                     <ul className="animation_container_nav">
@@ -36,13 +34,6 @@ export default function NavMenu() {
                         <li><Link to={'api'}>API</Link></li>
                     </ul>
                 </li>
-                <Switch>
-                    <Route path={'/popular'}> <MoviesPopular/>
-                </Route>
-                </Switch>
             </ul>
-        </Router>
-
-
 )
 }

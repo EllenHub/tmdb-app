@@ -1,8 +1,10 @@
 import {useEffect, useState} from "react";
 import React from "react";
-import {API_URL,API_KEY} from "../../../services/Config";
+import {API_URL,API_KEY,IMAGE_URL} from "../../Components/services/Config";
+import Card from "../../Components/card/Card";
 
 
+import './MoviesPopular.css'
 export default function MoviesPopular() {
     const [popularMovies, setPopularMovies] = useState([])
     useEffect(() => {
@@ -14,13 +16,13 @@ export default function MoviesPopular() {
             })
     }, [])
     return (
-        <div>
-            {
-                popularMovies.map(item => <div>
-                    <div style={{
-                        background: "white", width: '500px', height: '300px'}}> {item.original_title}</div>
-                </div>)
-            }
+        <div className={'popular_movies_wrapper'}>
+            <h1> Popular Movies</h1>
+            <div className={'wrapper'}>{
+                popularMovies.map(item =><Card key={item.id} image ={`${IMAGE_URL}w200${item.poster_path}`}
+                   name ={item.title} movieId = {item.id}/>
+                )
+            }</div>
         </div>
 )
 }

@@ -4,7 +4,6 @@ import NavMenu from "./nav-menu/NavMenu";
 import NavSearch from "./nav-search/NavSearch";
 
 import logo from '../../images/logo.svg';
-import MoviesPopular from "./movies/movies-popular/MoviesPopular";
 
 
 export default function Header() {

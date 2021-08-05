@@ -10,10 +10,8 @@ function App() {
   return (
       <Router>
           <div>
-              <div>
-                  <Header/>
-                  <Main/>
-              </div>
+              <Header/>
+              <Main/>
           </div>
       </Router>
   );
