@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {API_KEY, API_URL, IMAGE_URL} from "../../Components/services/Config";
+import {API_KEY, API_URL, IMAGE_URL} from "../services/Config";
 
 import './MovieDetails.css'
 import MovieDetailCard from "../movie-details-card/MovieDetailCard";
@@ -25,4 +25,3 @@ let [movie,setMovie] =useState({})
                 <MovieDetailCard movie = {movie}/>
             </div>
             ) }
-//https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/gGTCDNEvwG848u34Op1nZNALLUr.jpg

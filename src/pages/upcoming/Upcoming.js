@@ -3,12 +3,11 @@ import React from "react";
 import {API_URL,API_KEY,IMAGE_URL} from "../../Components/services/Config";
 import MovieList from "../../Components/movie-list/MovieList";
 
-import './MoviesPopular.css'
 
-export default function MoviesPopular() {
+export default function Upcoming() {
     const [movies, setMovies] = useState([])
     useEffect(() => {
-        fetch(`${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
+        fetch(`${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`)
             .then(response =>response.json())
             .then(({results}) =>{
                 setMovies(results)
@@ -21,8 +20,8 @@ export default function MoviesPopular() {
             <div className={'wrapper'}>{
                 movies.map(item =><MovieList key={item.id} image ={`${IMAGE_URL}w200${item.poster_path}`}
                                              name ={item.title} movieId = {item.id}/>
-                )}
-            </div>
+                )
+            }</div>
         </div>
-)
+    )
 }

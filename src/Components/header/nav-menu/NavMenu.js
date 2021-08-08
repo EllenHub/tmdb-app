@@ -18,10 +18,9 @@ export default function NavMenu() {
                         <li><Link to={'popular'}>Popular</Link></li>
                         <li><Link to={'airing-today'}>Airing Today</Link></li>
                         <li><Link to={'on-tv'}>On TV</Link></li>
-                        <li><Link to={'top-rated'}>Top Rated</Link></li>
                     </ul>
                 </li>
-                <li className={'header_nav__item'}><Link to={'people'}>People</Link>
+                <li className={'header_nav__item'}><a href={'#'}>People</a>
                     <ul className="animation_container_nav small">
                         <li><Link to={'popular-people'}>Popular People</Link></li>
                     </ul>
