@@ -1,0 +1,25 @@
+.person_detail_card_wrapper {
+    width: 80%;
+    height: 600px;
+    background: white;
+    display: flex;
+    column-gap: 40px;
+    border-radius: 8px;
+}
+.person_description {
+}
+.person_description h2, h4 {
+    color: black;
+    margin: 30px 0;
+}
+
+.personal_info p {
+    color: black;
+}
+.biography {
+    display: inline-block;
+    overflow:hidden;
+    width: 90%;
+    height: 200px;
+    text-align: justify;
+}

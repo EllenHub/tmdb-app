@@ -36,3 +36,7 @@ h1, h2, h3, h4, p {
    padding: 40px;
     margin: 5px;
 }
+
+.description_info h4 {
+    color: white;
+}

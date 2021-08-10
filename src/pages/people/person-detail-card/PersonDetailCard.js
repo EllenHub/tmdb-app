@@ -1,12 +1,26 @@
 import {IMAGE_URL} from "../../../Components/services/Config";
 import React from "react";
 
+import './PersonDetailCard.css'
+
 export default function PersonDetailCard({value}) {
     return (
-        <div style={{width: '300px', height: '200px',  background: 'grey', paddingTop: '60px' }}>
-            {
-                value.name
-            }
+        <div className={'person_detail_card_wrapper'}>
+            <div className={'image_side'}>
+                <img src={`${IMAGE_URL}w400${value.profile_path}`} alt=""/>
+            </div>
+            <div className={'person_description'}>
+                <h2>{value.name}</h2>
+                <div className={'personal_info'}>
+                    <p><b>Known for:</b> {value.known_for_department}</p>
+                    <p><b>Popularity:</b> {value.popularity}</p>
+                    <p><b>Birthday:</b> {value.birthday}</p>
+                    <p><b>Place of birth:</b> {value.place_of_birth}</p>
+                    <h4>Biography</h4>
+                    <p className={'biography'}> {value.biography}</p>
+                </div>
+            </div>
+
         </div>
 )
 }

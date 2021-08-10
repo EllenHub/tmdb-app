@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import {API_KEY, API_URL} from "../../../Components/services/Config";
+
 import PersonDetailCard from "../person-detail-card/PersonDetailCard";
+import './PersonDetail.css'
 
 export default function PersonDetail(props) {
     console.log(props);
@@ -15,7 +17,7 @@ export default function PersonDetail(props) {
         })
     }, [personId])
     return (
-        <div>
+        <div className={'person_detail_wrapper'}>
             <PersonDetailCard value={personDetail}/>
         </div>
 )
