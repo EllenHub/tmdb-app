@@ -4,6 +4,7 @@ import NavMenu from "./nav-menu/NavMenu";
 import NavSearch from "./nav-search/NavSearch";
 
 import logo from '../../images/logo.svg';
+import ThemeSwitcher from "../theme-switcher/ThemeSwitcher";
 
 
 export default function Header() {
@@ -15,6 +16,8 @@ export default function Header() {
                     <NavMenu/>
                 </div>
                 <div className="header_right">
+
+                   <ThemeSwitcher/>
                     <NavSearch/>
                 </div>
             </div>

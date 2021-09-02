@@ -63,10 +63,18 @@
 
 .header_right {
     width: 700px;
+    height: fit-content;
     display: flex;
     justify-content: flex-end;
-}
+    column-gap: 30px;
 
+
+}
+.search_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 i {
     cursor: pointer;
     font-size: 22px;
@@ -101,7 +109,7 @@ i {
 
 .animation_container_nav li {
     list-style: none;
-    padding-top: 7px;
+    padding-top: 8px;
 }
 .animation_container_nav li:hover {
     background-color: #cccccc;

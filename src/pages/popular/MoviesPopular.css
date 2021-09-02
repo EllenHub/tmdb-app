@@ -1,6 +1,7 @@
 
 .movies_wrapper{
     padding-top: 64px;
+
 }
 .wrapper {
     display: flex;
@@ -9,7 +10,27 @@
     column-gap: 20px;
     row-gap: 20px;
 }
-h1 {
+.movies_wrapper h1 {
     margin: 30px;
-    padding-left: 35px;
+    padding-left: 40px;
+    color: #0d253f;
 }
+.load_more__button {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.load_more__button button {
+    width: 200px;
+    height: 60px;
+    border-radius: 6px;
+
+    font-size: 20px;
+    background: #0d253f;
+    color: white;
+    cursor: pointer;
+}
+

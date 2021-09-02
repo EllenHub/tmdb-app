@@ -16,8 +16,10 @@ export default function PersonDetailCard({value}) {
                     <p><b>Popularity:</b> {value.popularity}</p>
                     <p><b>Birthday:</b> {value.birthday}</p>
                     <p><b>Place of birth:</b> {value.place_of_birth}</p>
-                    <h4>Biography</h4>
-                    <p className={'biography'}> {value.biography}</p>
+
+                    { value.biography && <h4>Biography</h4> &&
+                        <p className={'biography'}> {value.biography}</p>}
+
                 </div>
             </div>
 

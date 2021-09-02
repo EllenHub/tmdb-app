@@ -1,11 +1,11 @@
 .card_style {
     width: 200px;
-    height: 400px;
+    height: 376px;
     box-sizing: border-box;
 
     border-radius: 7px;
     border: 2px solid gainsboro;
-   box-shadow: 5px 3px 3px #d7d4d4;
+    box-shadow: 5px 3px 3px #d7d4d4;
 }
 .movie_name{
     padding: 10px 0 0 10px;

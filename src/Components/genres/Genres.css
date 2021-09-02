@@ -1,0 +1,26 @@
+.genres_wrapper {
+    display: flex;
+    margin-top: 64px;
+    width: 100%;
+    height: fit-content;
+    column-gap: 5%;
+}
+.genre_badges {
+    width: 20%;
+    background: #f0eded;
+    border-radius: 0 30px 30px 0;
+
+}
+.movies_display {
+    padding-top: 20px;
+    width: 70%;
+    box-sizing: border-box;
+
+
+}
+.genre_badges h3 {
+    margin: 30px 0 30px 40px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #0d253f;
+}
