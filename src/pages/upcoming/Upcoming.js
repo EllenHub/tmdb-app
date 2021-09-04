@@ -1,15 +1,15 @@
 import {useEffect, useState} from "react";
 import React from "react";
-import {API_URL,API_KEY,IMAGE_URL} from "../../Components/services/Config";
+import {IMAGE_URL} from "../../Components/services/config";
 import MovieList from "../../Components/movie-list/MovieList";
+import {endpointUpcoming, endpointUpcomingCurrentPage} from "../../Components/services/endpoints";
 
 
 export default function Upcoming() {
     const [movies, setMovies] = useState([])
     const [currentPage, setCurrentPage] = useState(0)
     useEffect(() => {
-        let endpoint = `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
-        fetchMoreMovies(endpoint)
+        fetchMoreMovies(endpointUpcoming)
     }, [])
     const fetchMoreMovies = (path) => {
         fetch(path)
@@ -20,8 +20,7 @@ export default function Upcoming() {
             })
     }
     const handleButton = () => {
-        let endpoint = `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=${currentPage + 1}`
-        fetchMoreMovies(endpoint)
+        fetchMoreMovies(endpointUpcomingCurrentPage`${currentPage + 1}`)
     }
 
     return (

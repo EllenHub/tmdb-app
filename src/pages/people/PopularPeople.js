@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {API_KEY, API_URL, IMAGE_URL} from "../../Components/services/Config";
+import { IMAGE_URL} from "../../Components/services/config";
 import PeopleList from "./people-list/PeopleList";
+import {endpointPeople, endpointPeopleCurrentPage} from "../../Components/services/endpoints";
 
 
 export default function PopularPeople() {
@@ -9,9 +10,7 @@ export default function PopularPeople() {
     let [currentPage, setCurrentPage] = useState(0)
 
     useEffect( () => {
-        let endpoint = `${API_URL}person/popular?api_key=${API_KEY}&language=en-US&page=1`
-        fetchMoreMovies(endpoint)
-
+        fetchMoreMovies(endpointPeople)
 }, [])
     const fetchMoreMovies = (path) => {
         fetch(path)
@@ -22,8 +21,7 @@ export default function PopularPeople() {
             })
     }
     const handleButton = () => {
-        let endpoint = `${API_URL}person/popular?api_key=${API_KEY}&language=en-US&page=${currentPage+1}`
-        fetchMoreMovies(endpoint)
+        fetchMoreMovies(endpointPeopleCurrentPage + `${currentPage+1}`)
     }
     return (
         <div className={'movies_wrapper'}>
@@ -32,8 +30,8 @@ export default function PopularPeople() {
             <div className={'wrapper'}>
                 {
               person.map(item =><PeopleList key={item.id}
-                                            image={`${IMAGE_URL}w200${item.profile_path}`}
-                                            name ={item.name} personId = {item.id}/>
+                   image={`${IMAGE_URL}w200${item.profile_path}`}
+                    name ={item.name} personId = {item.id}/>
                 )}
             </div>
             <div className={'load_more__button'}>

@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import {API_KEY, API_URL, IMAGE_URL} from "../services/Config";
+import {API_KEY, API_URL, IMAGE_URL} from "../services/config";
 
 import './MovieDetails.css'
-import MovieDetailCard from "../movie-details-card/MovieDetailCard";
+import MovieDetailsCard from "../movie-details-card/MovieDetailsCard";
 
 export default function MovieDetails(props) {
     console.log(props);
@@ -22,6 +22,6 @@ let [movie,setMovie] =useState({})
 
     return (
         <div className={'details_wrapper'}>
-                <MovieDetailCard movie = {movie}/>
+                <MovieDetailsCard movie = {movie}/>
             </div>
             ) }

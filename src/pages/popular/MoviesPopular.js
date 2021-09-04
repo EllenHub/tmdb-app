@@ -1,16 +1,18 @@
 import {useEffect, useState} from "react";
 import React from "react";
-import {API_URL,API_KEY,IMAGE_URL} from "../../Components/services/Config";
+import {IMAGE_URL} from "../../Components/services/config";
 import MovieList from "../../Components/movie-list/MovieList";
 
 import './MoviesPopular.css'
 
+import {endpointPopular, endpointPopularCurrentPage} from "../../Components/services/endpoints";
+
 export default function MoviesPopular() {
     const [movies, setMovies] = useState([])
     const [currentPage, setCurrentPage] = useState(0)
+
     useEffect(() => {
-        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`
-        fetchMoviesPath(endpoint)
+        fetchMoviesPath(endpointPopular)
     }, [])
 
     const fetchMoviesPath = (path) => {
@@ -23,9 +25,7 @@ export default function MoviesPopular() {
     }
 
     const handleButton = () => {
-        let endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage + 1}`
-        fetchMoviesPath(endpoint)
-
+        fetchMoviesPath(endpointPopularCurrentPage + `${currentPage + 1}`)
     }
     return (
         <div className={'movies_wrapper'}>

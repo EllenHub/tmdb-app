@@ -1,15 +1,14 @@
 import {useEffect, useState} from "react";
 import React from "react";
-import {API_URL,API_KEY,IMAGE_URL} from "../../Components/services/Config";
+import {IMAGE_URL} from "../../Components/services/config";
 import MovieList from "../../Components/movie-list/MovieList";
-
+import {endpoinTopRatedCurrentPage, endpointTopRated} from "../../Components/services/endpoints";
 
 export default function TopRated() {
     const [moviesTop, setMoviesTop] = useState([])
     const [currentPage, setCurrentPage] =useState(0)
     useEffect(() => {
-        let endpoint = `${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
-            fetchMoreMovies(endpoint)
+            fetchMoreMovies(endpointTopRated)
     }, [])
 
     const fetchMoreMovies = (path) => {
@@ -18,13 +17,10 @@ export default function TopRated() {
             .then((response) =>{
                 setMoviesTop(response.results)
                 setCurrentPage(response.page)
-
             })
-
     }
     const handleButton = () => {
-        let endpoint = `${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=${currentPage+1}`
-        fetchMoreMovies(endpoint)
+        fetchMoreMovies(endpoinTopRatedCurrentPage +`${currentPage+1}` )
     }
     return (
         <div className={'movies_wrapper'}>
@@ -32,7 +28,7 @@ export default function TopRated() {
             <h1> Top Rated Movies</h1>
             <div className={'wrapper'}>{
                 moviesTop.map(item =><MovieList key={item.id} image ={`${IMAGE_URL}w200${item.poster_path}`}
-                                                name ={item.title} movieId = {item.id}/>
+                name ={item.title} movieId = {item.id}/>
                 )
             }</div>
             <div className={'load_more__button'}>

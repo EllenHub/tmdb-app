@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {API_KEY, API_URL, IMAGE_URL} from "../../Components/services/Config";
+import {API_KEY, API_URL, IMAGE_URL} from "../../Components/services/config";
 import MovieList from "../../Components/movie-list/MovieList";
-
+import {endpointPopular, endpointPopularCurrentPage} from "../../Components/services/endpoints";
 
 export default function Home() {
 
@@ -10,8 +10,7 @@ export default function Home() {
     const [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {
-        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`
-        fetchMoviesPath(endpoint)
+        fetchMoviesPath(endpointPopular)
     }, [])
 
     const fetchMoviesPath = (path) => {
@@ -23,15 +22,13 @@ export default function Home() {
             })
     }
     const handleButton = () => {
-        let endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage + 1}`
-        fetchMoviesPath(endpoint)
-
+        fetchMoviesPath(endpointPopularCurrentPage + `${currentPage + 1}`)
     }
 
     const handleOnSubmit =(e) => {
     e.preventDefault()
         if (searchTerm) {
-            fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}&page=${currentPage}` + searchTerm)
+            fetch(`${API_URL}search/movie?api_key=${API_KEY}&query=${searchTerm}&page=${currentPage}` + searchTerm)
                 .then(response => response.json())
                 .then(response =>
                     setMovies(response.results))
@@ -43,7 +40,6 @@ export default function Home() {
     setSearchTerm(e.target.value)
     }
     return (
-
             <div className={'main'}>
                 <div className='inner_content'>
                     <div className={'inner_wrapper'}>
@@ -54,12 +50,13 @@ export default function Home() {
                         <div className={'search_box'}>
                             <form onSubmit={handleOnSubmit}>
                                 <input className={'search'}
-                                type="search"
-                                placeholder="Search..."
+                                       type="search"
+                                       placeholder="Search..."
                                        value={searchTerm}
-                                       onChange={handleOnChange}
-                                />
-                                <input className={'search_submit'} type="submit" value='Submit'/>
+                                       onChange={handleOnChange}/>
+                                <input className={'search_submit'}
+                                       type="submit"
+                                       value='Submit'/>
                             </form>
                         </div>
                     </div>
@@ -74,11 +71,8 @@ export default function Home() {
                         <div className={'load_more__button'}>
                             <button onClick = {handleButton}> Load more </button>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
 
 

@@ -1,10 +1,10 @@
 
 import React from "react";
-import './MovieDetailCard.css'
-import {IMAGE_URL} from "../services/Config";
+import './MovieDetailsCard.css'
+import {IMAGE_URL} from "../services/config";
 
 
-export default function MovieDetailCard({movie}) {
+export default function MovieDetailsCard({movie}) {
     return (
         <div className={'detail_card_wrapper'} style={{
             backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`

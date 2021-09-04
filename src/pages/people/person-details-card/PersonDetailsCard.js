@@ -1,9 +1,9 @@
-import {IMAGE_URL} from "../../../Components/services/Config";
+import {IMAGE_URL} from "../../../Components/services/config";
 import React from "react";
 
-import './PersonDetailCard.css'
+import './PersonDetailsCard.css'
 
-export default function PersonDetailCard({value}) {
+export default function PersonDetailsCard({value}) {
     return (
         <div className={'person_detail_card_wrapper'}>
             <div className={'image_side'}>

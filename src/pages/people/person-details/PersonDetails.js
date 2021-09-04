@@ -1,13 +1,15 @@
 import {useEffect, useState} from "react";
-import {API_KEY, API_URL} from "../../../Components/services/Config";
+import {API_KEY, API_URL} from "../../../Components/services/config";
 
-import PersonDetailCard from "../person-detail-card/PersonDetailCard";
-import './PersonDetail.css'
+import PersonDetailsCard from "../person-details-card/PersonDetailsCard";
+import './PersonDetails.css'
 
-export default function PersonDetail(props) {
+export default function PersonDetails(props) {
     console.log(props);
     let {match:{params:{personId}}} = props
+
     let [personDetail, setPersonDetail] = useState({})
+
     useEffect(() => {
         fetch(`${API_URL}person/${personId}?api_key=${API_KEY}&language=en-US`)
             .then(response => response.json())
@@ -18,7 +20,7 @@ export default function PersonDetail(props) {
     }, [personId])
     return (
         <div className={'person_detail_wrapper'}>
-            <PersonDetailCard value={personDetail}/>
+            <PersonDetailsCard value={personDetail}/>
         </div>
 )
 }

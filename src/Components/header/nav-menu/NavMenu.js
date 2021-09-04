@@ -14,7 +14,6 @@ export default function NavMenu() {
                     </ul>
                 </li>
                 <li className={'header_nav__item'}><Link to={'genres'}> Genres</Link>
-
                 </li>
                 <li className={'header_nav__item'}><Link to={'popular-people'}>People</Link>
                 </li>

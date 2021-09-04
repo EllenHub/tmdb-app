@@ -5,7 +5,7 @@ import MovieDetails from "../movie-details/MovieDetails";
 import NowPlaying from "../../pages/now-playing/NowPlaying";
 import Upcoming from "../../pages/upcoming/Upcoming";
 import PopularPeople from "../../pages/people/PopularPeople";
-import PersonDetail from "../../pages/people/person-detail/PersonDetail";
+import PersonDetails from "../../pages/people/person-details/PersonDetails";
 import Genres from "../genres/Genres";
 
 export default function Routes() {
@@ -19,7 +19,7 @@ export default function Routes() {
              <Route path = {'/top-rated'} component={Upcoming}/>
              <Route path={'/movie-details/:movieId'} component={MovieDetails}/>
              <Route path={'/popular-people'} component={PopularPeople}/>
-             <Route path={'/person-details/:personId'} component={PersonDetail}/>
+             <Route path={'/person-details/:personId'} component={PersonDetails}/>
              <Route path ={'/genres'} component={Genres}/>
 
          </Switch>
