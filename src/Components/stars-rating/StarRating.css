@@ -1,0 +1,10 @@
+.star {
+    color: #ff9933;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.rating_compon{
+    padding:  3px 50px 2px 50px;
+
+}

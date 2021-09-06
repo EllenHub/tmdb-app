@@ -41,6 +41,7 @@ const ButtonText = styled.text`
 
 export const Container  = styled.div`
   background-color: ${(props) =>props.theme.PRIMARY_BACKGROUND_COLOR};
+  
 `;
 
 

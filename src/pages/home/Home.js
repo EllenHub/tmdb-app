@@ -3,6 +3,7 @@ import {API_KEY, API_URL, IMAGE_URL} from "../../Components/services/config";
 import MovieList from "../../Components/movie-list/MovieList";
 import {endpointPopular, endpointPopularCurrentPage} from "../../Components/services/endpoints";
 
+
 export default function Home() {
 
     const [movies, setMovies] = useState([])

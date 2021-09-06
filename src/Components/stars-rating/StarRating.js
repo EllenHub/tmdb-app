@@ -1,49 +1,59 @@
 import { useState} from "react";
-import { Rating } from '@material-ui/lab';
+import './StarRating.css'
 
+//
+//
+//
+// export default function StarRating({rating,setRating, movieId}) {
+//     const onStarClick= (rate) => {
+//         setRating(rate)}
 
+// return (
+//     <div className={'rating_compon'}>
+//         {  <Rating
+//             name="size-small"
+//             size="small"
+//             value={rating}
+//             onChange={(e, newValue) => {
+//                 console.log(movieId);
+//                 console.log(newValue)
+//                 onStarClick(newValue)
+//             }}
+//         />}
+//         </div>
+// )
+// }
+const Star = ({ marked, starId }) => {
+    return (
+        <span data-star-id={starId} className="star" role="button">
+      {marked ? '\u2605' : '\u2606'}
+    </span>
+    );
+};
 
+ export const StarRating = ({ value }) => {
+    const [rating, setRating] = useState(parseInt(value) || 0);
+    const [selection, setSelection] = useState(0);
 
-export default function StarRating() {
-
-
-    const [rating, setRating] =useState(3)
-
-
-    const onStarClick= (rate) => {
-
-        setRating(rate)
-
-    }
-
-// const movieRating = (movieId, rating) => {
-//     return (`https://api.themoviedb.org/3/movie/${movieId}/rating?api_key=${API_KEY}`,{
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json;charset=utf-8',
-//       },
-//       body: JSON.stringify({
-//         "value": rating
-//       })
-//     })
-//   }
-    //
-    // useEffect(() => {
-    //     rateMovies()
-    // }, []);
-return (
-    <div className={'rating_compon'}>
-        {  <Rating
-            name="size-small"
-            size="small"
-            value={rating}
-            onChange={(e, newValue) => {
-                console.log(e)
-                console.log(newValue)
-                onStarClick(newValue)
-            }}
-        />}
+    const hoverOver = event => {
+        let val = 0;
+        if (event && event.target && event.target.getAttribute('data-star-id'))
+            val = event.target.getAttribute('data-star-id');
+        setSelection(val);
+    };
+    return (
+        <div className={'rating_compon'}
+            onMouseOut={() => hoverOver(null)}
+            onClick={e => setRating(e.target.getAttribute('data-star-id') || rating)}
+            onMouseOver={hoverOver}
+        >
+            {Array.from({ length: 5 }, (v, i) => (
+                <Star
+                    starId={i + 1}
+                    key={`star_${i + 1}`}
+                    marked={selection ? selection >= i + 1 : rating >= i + 1}
+                />
+            ))}
         </div>
-
-)
-}
+    );
+};

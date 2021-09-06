@@ -1,9 +1,10 @@
 
 import './MovieList.css'
 import {Link} from "react-router-dom";
-import React from "react";
-import StarRating from "../stars-rating/StarRating";
+import {StarRating} from "../stars-rating/StarRating";
+
 export default function MovieList({ name, image, movieId}) {
+
     return (
             <div className={'card_style'}>
                 <div>
@@ -12,7 +13,7 @@ export default function MovieList({ name, image, movieId}) {
                 <div className={'description'}>
                     <h2 className={'movie_name'}> <Link to={'movie-details/'+ movieId}>{name}</Link></h2>
                 </div>
-                  <StarRating movieId = {movieId}/>
+                  <StarRating value = {2}/>
             </div>
 
 )

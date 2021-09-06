@@ -1,6 +1,6 @@
 export const darkTheme = {
     mode: "dark",
-    PRIMARY_BACKGROUND_COLOR: "rgba(35,62,179,0.32)",
+    PRIMARY_BACKGROUND_COLOR: "rgb(78,65,65)",
     PRIMARY_TEXT_COLOR: "#ffffff",
     PRIMARY_BUTTON_COLOR: "#61babb",
     PRIMARY_BUTTON_TEXT_COLOR:"#ffffff"

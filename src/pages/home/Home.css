@@ -41,12 +41,6 @@
     font-weight: bolder;
 
 }
-.movies_wrapper_home {
-    width: 100%;
-    height: 15px;
-    box-sizing: border-box;
-
-}
 .search_box {
     margin: 70px auto;
     width: 90%;

@@ -17,8 +17,8 @@ function App() {
       <Provider store={store}>
           <Container>
               <Router>
-                 <Header/>
-                 <Main/>
+                  <Header/>
+                  <Main/>
               </Router>
           </Container>
       </Provider>
