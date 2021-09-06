@@ -18,14 +18,12 @@ const GenreBadges = ({genres, setGenres, selectedGenres, setSelectedGenres, curr
         fetchGenres()
     }, [currentPage]);
 
-    //handle add
-    const handleAddGenres = genre => {
+    const handleAddGenres = (genre) => {
         setSelectedGenres([...selectedGenres, genre]);
         setGenres(genres.filter(g => g.id !== genre.id));
     };
 
-    //handle add
-    const handleRemoveGenres = genre => {
+    const handleRemoveGenres = (genre) => {
         setSelectedGenres(
             selectedGenres.filter(selected => selected.id !== genre.id)
         );

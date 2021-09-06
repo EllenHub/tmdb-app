@@ -16,9 +16,9 @@ import MovieList from "../movie-list/MovieList";
 
      const genresIds = genresIDs(selectedGenres);
 
-     const fetchMovies = async () => {
+     const fetchMovies = async() => {
          try {
-             const { data } = await axios.get(`${API_URL}discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=${currentPage}&with_genres=${genresIds}`);
+             const {data} = await axios.get(`${API_URL}discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=${currentPage}&with_genres=${genresIds}`);
              setMovies(data.results)
              setCurrentPage(data.pages)
          } catch (error) {

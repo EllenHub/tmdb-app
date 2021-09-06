@@ -12,7 +12,7 @@ export default function MovieList({ name, image, movieId}) {
                 <div className={'description'}>
                     <h2 className={'movie_name'}> <Link to={'movie-details/'+ movieId}>{name}</Link></h2>
                 </div>
-<StarRating/>
+                  <StarRating movieId = {movieId}/>
             </div>
 
 )

@@ -21,7 +21,6 @@ export default function Routes() {
              <Route path={'/popular-people'} component={PopularPeople}/>
              <Route path={'/person-details/:personId'} component={PersonDetails}/>
              <Route path ={'/genres'} component={Genres}/>
-
          </Switch>
         </div>
 )

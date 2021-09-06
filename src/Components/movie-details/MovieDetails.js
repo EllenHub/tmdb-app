@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {API_KEY, API_URL, IMAGE_URL} from "../services/config";
+import {API_KEY, API_URL} from "../services/config";
 
 import './MovieDetails.css'
 import MovieDetailsCard from "../movie-details-card/MovieDetailsCard";
