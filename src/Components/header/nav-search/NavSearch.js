@@ -12,7 +12,8 @@ export default function NavSearch() {
             <div onClick={() => setIconToggle(!iconToggle)} >{icons}</div>
             {iconToggle && <div className={'searchInput'}>
 
-                <input  className={'search'} type="text" placeholder="Search for a movie, tv-show... " />
+                <input  className={'search'} type="text"
+                        placeholder="Search for a movie, tv-show... " />
 
             </div>}
         </div>

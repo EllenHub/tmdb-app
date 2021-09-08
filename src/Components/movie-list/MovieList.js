@@ -1,4 +1,3 @@
-
 import './MovieList.css'
 import {Link} from "react-router-dom";
 import {StarRating} from "../stars-rating/StarRating";
@@ -13,7 +12,9 @@ export default function MovieList({ name, image, movieId}) {
                 <div className={'description'}>
                     <h2 className={'movie_name'}> <Link to={'movie-details/'+ movieId}>{name}</Link></h2>
                 </div>
-                  <StarRating value = {2}/>
+
+               {/*todo StarRating needs improvement*/}
+                  {/*<StarRating value = {2}/>*/}
             </div>
 
 )

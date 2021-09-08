@@ -10,7 +10,6 @@ import themeReducer from "./Components/redux/reducer/themeReducer";
 
 import {Container} from "./Components/theme-switcher/ThemeSwitcher";
 
-
 const store = createStore(combineReducers({themeReducer}), applyMiddleware(thunk))
 function App() {
   return (

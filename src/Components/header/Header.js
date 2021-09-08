@@ -17,8 +17,10 @@ export default function Header() {
                 </div>
                 <div className="header_right">
 
-                   <ThemeSwitcher/>
-                    <NavSearch/>
+                    todo get the theme to work properly
+                   {/*<ThemeSwitcher/>*/}
+                    todo get the Search to work in the nav section!!
+                    {/*<NavSearch/>*/}
                 </div>
             </div>
         </div>
